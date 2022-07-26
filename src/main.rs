@@ -41,3 +41,25 @@ enum Literal {
     Int,
     String
 }
+
+#[derive(PartialEq, Clone)]
+enum Character {
+    Any(char),
+    Letter(char),
+    Digit(char),
+    Symbol(char)
+}
+fn main() {
+    let args: Vec<String> = env::args().collect();
+    let target = &args[1];
+    println!("Parsing {}", target);
+    let contents = fs::read_to_string(target)
+        .expect("Encountered error while reading file");
+    let alphabet: Vec<Node> = (b'A'..=b'z').map(|c| c as char)
+        .filter(|c| c.is_alphabetic())
+        .map(|c| Node::Character(Character::Any(c))).collect::<Vec<_>>();
+    let digits: Vec<Node> = "0123456789".chars()
+        .map(|c| Node::Character(Character::Any(c))).collect();
+    let symbols: Vec<Node> = "!@#$%^&*()`~-_=+[]{};:,.<>/?|".chars()
+        .map(|c| Node::Character(Character::Symbol(c))).collect();
+}
