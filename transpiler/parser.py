@@ -51,6 +51,16 @@ class Node:
 
     def __str__(self):
         return f'Node <{self.type}> ({self.depth})' + '\n' + '\n'.join('  '*self.depth + str(n) for n in self.children)
-with open('example.fn', 'r') as f:
-    parsed = parser.parse(f.read())
-print(parsed.pretty()[:2000])
+
+def parse(path):
+    with open(path, 'r') as f:
+        parsed = parser.parse(f.read())
+    #print(parsed.pretty()[:2000])
+    return parsed
+
+parsed = parse('example.fn')
+ast = Node(parsed)
+print(ast)
+
+tr_c = ast.c()
+print(tr_c)
