@@ -1,0 +1,10 @@
+"This module provides tooling for generating documentation from source code
+written in Finch using comments and docstrings (as well as standalone ). It
+will eventually include Markdown and HTML generation, automatic diagramming,
+type/function/file linking, custom templates, and other useful features. The
+functionality of this module is inspired partially by the generally beloved
+[rustdoc](https://doc.rust-lang.org/rustdoc/what-is-rustdoc.html).
+
+Internally, it takes advantage of Finch's support for introspection and related
+techniques that allow a program to examine its own source code (or other
+programs') as if they were any other kind of data."
