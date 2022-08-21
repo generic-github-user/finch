@@ -1,0 +1,10 @@
+""
+This module provides a generic sequence base type for ordered and indexable
+collections, and several practical subtypes, including dynamically sized lists
+and index/range types. It is also intended to serve as a sort of standard for
+defining and annotating the interfaces that sequence-like types should provide.
+""
+
+type sequence (T)
+		info: "An ordered collection that provides a base type for arrays and
+		other concrete types. Implementations must be type-generic and indexable."
