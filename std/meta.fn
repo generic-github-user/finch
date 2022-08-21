@@ -1,0 +1,26 @@
+
+
+pub fn(tree) parse (string s)
+
+pub type tree
+
+pub type operator
+pub type symbol
+
+pub type expression
+		pub type literal
+				pub type char
+				pub type string
+				pub type int
+				pub type float
+
+		pub type tuple
+		pub type list
+		pub type operation
+		pub type call
+
+pub type block
+		pub type definition
+
+pub type statement
+		pub type assignment
