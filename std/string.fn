@@ -1,0 +1,20 @@
+
+"General categories of ASCII characters for convenience.
+ascii
+		lowercase: 'abcdefghijklmnopqrstuvwxyz' "hand-typed with love
+		uppercase: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' 
+		digits: '0123456789'
+		punctuation: '!,.;:-_'
+		symbols: '`~@#$%^&*()<>[]{}=+' + punctuation
+		all: cat(lowercase uppercase digits symbols)
+
+char
+		lower: this -> sequence.translate(this ascii.uppercase ascii.lowercase)
+		upper: this -> sequence.translate(this ascii.lowercase ascii.uppercase)
+
+string
+		info: "An ASCII string; this implementation is essentially a sequence of
+		`char`s with additional attributes"
+		
+		lower: this -> this.map(.lower)
+		upper: this -> this.map(.upper)
